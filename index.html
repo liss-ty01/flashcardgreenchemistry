@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Green Chemistry Flashcards</title>
+</head>
+<body>
+    <div id="automatic-popup" class="automatic-popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Automatic Popup Content</h2>
+            <p>Apabila Anda menggunakan ponsel, mohon atur pada tampilan "landscape". Terima kasih!</p>
+        </div>
+    </div>
+    <header>
+        <div class="top-bar">
+            <button class="game-button" onclick="GameButton()">Game</button>
+            <button type="tujuan-pembelajaran" class="btn" onclick="openPopup('popup')">Tujuan Pembelajaran</button>
+                <div class="popup" id="popup">
+                <img src="lovepik-character-puzzle-business-illustration-png-image_401534162_wh1200.png">
+                <h2>Tujuan Pembelajaran Materi Green Chemistry</h2>
+                <table>
+                    <tr><td>Mengidentifikasi prinsip kimia hijau dalam reaksi kimia yang sesuai dengan upaya pelestarian lingkungan menggunakan media pembelajaran flashcard untuk meningkatkan motivasi belajar peserta didik.</td></tr>
+                </table>
+            <button type="button" onclick="closePopup('popup')">Close</button>
+                </div>
+            <button class="custom-button" onclick="togglePopup()">Profil</button>
+                <div id="popup1" class="popup1">
+                    <img src="Profil_.png" alt="profil">
+                    <button class="custom-button" onclick="togglePopup()">X</button>
+                </div>
+                
+            <div id="overlay" class="overlay"></div>
+                
+        </div>
+    </header>
+    
+    <main>
+        <div class="button-container">
+            <img src="button1.png" class="image-btn flashcard" onclick="handleButtonClick('flashcard')" alt="Flashcard">
+            <img src="button2.png" class="image-btn task" onclick="handleButtonClick('task')" alt="Task">
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('createflashcard.png') center center fixed no-repeat;
+    background-size: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding-top: 10%;
+    padding-bottom: 3%;
+    padding-right: 25%;
+    padding-left: 30%;
+}
+
+.container {
+    background-color: rgb(234, 225, 236);
+    padding: 5% 3% 3%;
+    box-shadow: 0 0 10% rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5%;
+}
+
+#game-container {
+    margin-bottom: 3%;
+    font-size: 3vw;
+}
+
+#question {
+    font-size: 1.5vw;
+    margin-bottom: 3%;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    background-color: #6e2739;
+    color: rgb(252, 250, 250);
+    font-size: 1.2vw;
+    padding: 1% 2%;
+    margin: 0 2%;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+#mistakes {
+    font-size: 1vw;
+}
+
+.hidden {
+    display: none;
+}

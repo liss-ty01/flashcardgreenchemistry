@@ -1,0 +1,55 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: url('Design.png') center center fixed no-repeat;
+    background-size: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+.btn-back{
+    padding: 1% 2%;
+    background: #46453c;
+    border: 5%;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    color: aliceblue;
+    border-radius: 10%;
+    position: fixed;
+    top: 2%;
+    right: 1%;
+  }
+
+.container {
+    background-color: rgb(202, 196, 179);
+    padding: 2%;
+    margin-top: 5%;
+    border-radius: 10%;
+    box-shadow: 0 0 10% rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 2vw;
+}
+
+#emotions {
+    display: flex;
+    justify-content: center;
+    margin: 8% 0;
+}
+
+.emotion {
+    margin: 0 1%;
+    cursor: pointer;
+}
+
+.emotion img {
+    width: 10vw;
+    height: 10vw;
+}
+
+.hidden {
+    display: none;
+}

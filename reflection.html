@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Refleksi Pembelajaran</title>
+    <link rel="stylesheet" href="reflection-styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+          <button class="btn-back" onclick="handleButtonClick('back')">Back</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Bagaimana Pembelajaran Hari Ini?</h1>
+        <div id="emotions">
+            <div class="emotion" onclick="selectEmotion('Sangat Senang')">
+                <img src="happy.png" alt="Sangat Senang">
+            </div>
+            <div class="emotion" onclick="selectEmotion('Senang')">
+                <img src="smile.png" alt="Senang">
+            </div>
+            <div class="emotion" onclick="selectEmotion('Biasa Saja')">
+                <img src="neutral .png" alt="Biasa Saja">
+            </div>
+            <div class="emotion" onclick="selectEmotion('Sedih')">
+                <img src="sad.png" alt="Sedih">
+            </div>
+            <div class="emotion" onclick="selectEmotion('Sangat Sedih')">
+                <img src="very sad .png" alt="Sangat Sedih">
+            </div>
+        </div>
+        <button onclick="submitEmotion()">Kirim Reaksi</button>
+        <div id="response" class="hidden"></div>
+    </div>
+    <script src="reflection-script.js"></script>
+</body>
+</html>

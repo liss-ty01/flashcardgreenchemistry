@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    body {
+      font-family: 'fantasy';
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: top;
+      height: 500vh;
+      margin: 0;
+      background: url('2.png') center center fixed no-repeat;
+      background-size: cover;
+    }
+
+    .btn-back{
+      padding: 5px 30px;
+      background: #fff;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 200;
+      border-radius: 15px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+
+    /* Button to scroll to the top */
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
+
+    .card {
+      perspective: 50%;
+      width: 30%;
+      height: 10%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      margin: 3%;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .card .side {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card .front {
+        border: 1px solid #943030;
+        box-shadow: 0 4px 8px rgba(157, 182, 211, 0.918);
+        backface-visibility: hidden;
+        background: rgba(176, 206, 192, 0.904); /* White background with 70% opacity */
+    }
+
+    .card .back {
+        background-color: rgba(176, 206, 192, 0.904);
+        color: #fff;
+        transform: rotateY(180deg);
+    }
+
+    .btn{
+      padding: 2% 10%;
+      background: #89bec7;
+      border: 1%;
+      outline: none;
+      cursor: pointer;
+      font-size: 1,5vw;
+      font-weight: 100;
+      border-radius: 10px;
+      position:fixed;
+      top: 100%;
+    }
+    
+    /* Style for popup */
+    .popup{
+      width: 100%;
+      background: #c2dbdf;
+      border-radius: 3px;
+      font-size: 2vw;
+      position: fixed;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%,-50%) scale(0.1);
+      text-align: center;
+      padding: 0 5% 5%;
+      color: #333;
+      visibility: hidden;
+      transition: transform 0.4s, top 0.4s;
+    }
+
+    .openPopup{
+      visibility: visible;
+      top: 50%;
+      transform: translate(-50%,-50%) scale(1);
+    }
+    
+    .popup img{
+      width: 20%;
+      margin-top: 3%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .exit {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .popup h2{
+      font-size: 3vw;
+      font-weight: 100;
+      margin: 2% 0 1%;
+    }
+    
+    .popup-button{
+      width: 100%;
+      margin-top: 5%;
+      padding: 2% 0;
+      background: #6fd649;
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 2vw;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); 
+    }
+
+    /* Style for image and video */
+    .card img,
+    .card video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <div class="top-bar">
+      <button class="btn-back" onclick="handleButtonClick('back')">Back</button>
+    </div>
+  </header>
+
+  <!-- Back to top button -->
+  <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q1.png" alt="1">
+    </div>
+    <div class="side back">
+      <button type="button" class="btn" onclick="openPopup(1)">Question 1</button>
+        <!-- Video -->
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/Qs9cZ5lKwGk?si=DlX9xCP5sVa9PICz" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <div class="popup" id="popup1">
+          <img src="tick.png">
+          <button class="exit" onclick="exitPopup(1)">X</button>
+          <h2>Question 1</h2>
+          <table>
+            <tr><td>Prinsip kimia hijau (green chemistry) ke berapa yang dapat diterapkan dan bagaimana upaya pelesterian lingkungan berdasarkan prinsip tersebut?</td></tr>
+          </table>
+          <button class="popup-button" onclick="closePopup(1)">Kerjakan!</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Repeat for more video cards -->
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q2.png" alt="2">
+    </div>
+    <div class="side back">
+      <button type="button" class= "btn" onclick="openPopup(2)">Question 2</button>
+      <!-- Video -->
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/8Xh8iPcSFII?si=-ZX8xJx8AdmBQx_1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <!-- Second Popup -->
+      <div class="popup" id="popup2">
+        <img src="tick.png">
+        <button class="exit" onclick="exitPopup(2)">X</button>
+        <h2>Question 2</h2>
+        <table>
+          <tr><td>Bagaimana upaya pelesterian lingkungan berdasarkan permasalahan tersebut dengan menerapkan prinsip kimia hijau (green chemistry)?</td></tr>
+        </table>
+        <button class="popup-button" onclick="closePopup(2)">Kerjakan!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q3.png" alt="3">
+    </div>
+    <div class="side back">
+      <button type="button" class="btn" onclick="openPopup(3)">Question 3</button>
+      <!-- Video -->
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/N5I_Eyv6-wM?si=dlMcy5XtFSHhILgq" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <div class="popup" id="popup3">
+        <img src="tick.png">
+        <button class="exit" onclick="exitPopup(3)">X</button>
+        <h2>Question 3</h2>
+        <table>
+          <tr><td>K3 di laboratorium termasuk penerapan prinsip kimia hijau (green chemistry) ke berapa dan bagaimana upaya pelesterian lingkungan berdasarkan prinsip tersebut?</td></tr>
+        </table>
+        <button class="popup-button" onclick="closePopup(3)"> Kerjakan!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q4.png" alt="4">
+    </div>
+    <div class="side back">
+      <button type="button" class="btn" onclick="openPopup(4)">Question 4</button>
+      <!-- Video -->
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/yZdnMWkk7Tc?si=waZiOVa1viNNf8Pj" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <div class="popup" id="popup4">
+        <img src="tick.png">
+        <button class="exit" onclick="exitPopup(4)">X</button>
+        <h2>Question 4</h2>
+        <table>
+          <tr><td>Apakah penggunaan katalis termasuk penerapan prinsip kimia hijau (green chemistry)? Uraikan upaya pelesterian lingkungan berdasarkan prinsip tersebut!</td></tr>
+        </table>
+        <button class="popup-button" onclick="closePopup(4)"> Kerjakan!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q5.png" alt="5">
+    </div>
+    <div class="side back">
+      <button type="button" class="btn" onclick="openPopup(5)">Question 5</button>
+      <!-- Video -->
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/khBnowGV2vY?si=5V_qug1O8DL7OrIm" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <div class="popup" id="popup5">
+        <img src="tick.png">
+        <button class="exit" onclick="exitPopup(5)">X</button>
+        <h2>Question 5</h2>
+        <table>
+          <tr><td>Prinsip kimia hijau (green chemistry) ke berapa yang dapat diterapkan dan bagaimana upaya pelesterian lingkungan berdasarkan prinsip tersebut?</td></tr>
+        </table>
+        <button class="popup-button" onclick="closePopup(5)"> Kerjakan!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Cards -->
+  <div class="card">
+    <div class="side front">
+      <img src="q6.png" alt="6">
+    </div>
+    <div class="side back">
+      <button type="button" class="btn" onclick="openPopup(6)">Question 6</button>
+      <!-- Video -->
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/Layhy6Uid8I?si=1zW4Bi0k95ySbahf" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <div class="popup" id="popup6">
+        <img src="tick.png">
+        <button class="exit" onclick="exitPopup(6)">X</button>
+        <h2>Question 6</h2>
+        <table>
+          <tr><td>Bagaimana prinsip kimia hijau (green chemistry) dalam pembuatan produk kosmetik dan upaya pelestarian lingkungannya?</td></tr>
+        </table>
+        <button class="popup-button" onclick="closePopup(6)"> Kerjakan!</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPopup(cardNumber) {
+      var popup = document.getElementById("popup" + cardNumber);
+      popup.classList.add("openPopup");
+    }
+
+    function closePopup(cardNumber) {
+      var popup = document.getElementById("popup" + cardNumber);
+      popup.addEventListener("click", function(){
+        window.location.href = "https://drive.google.com/drive/folders/1BK2Ospssx0vCq15neK1Y6rceUUtg1QwK?usp=drive_link";
+      });
+    }
+
+    function exitPopup(cardNumber){
+      var popup = document.getElementById("popup" + cardNumber);
+      popup.classList.remove("openPopup");
+    }
+    
+    function handleButtonClick(buttonType) {
+    if (buttonType === 'back') {
+        // Navigate to a new page with back
+        window.location.href = 'index.html';}
+    }
+
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    }
+
+    // Show back to top button when scrolling down
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTop").style.display = "block";
+      } else {
+        document.getElementById("backToTop").style.display = "none";
+      }
+    }
+
+  </script>
+
+</body>
+</html>

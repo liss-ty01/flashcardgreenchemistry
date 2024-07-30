@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Flashcards</title>
+    <link rel="stylesheet" href="styles-game.css">
+</head>
+<body>
+    <div id="automatic-popup" class="automatic-popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Petunjuk Permainan!</h2>
+            <p>Cocokkan kalimat pada barisan sebelah kiri dengan menyeretnya ke barisan sebelah kanan dengan jawaban atau kalimat yang sesuai.</p>
+        </div>
+    </div>
+
+    <header>
+        <button class="custom-button" onclick="togglePopup()">Next game</button>
+            <div id="popup1" class="popup1">
+                <img src="Next game.png" alt="next-page-button">
+                <button class="custom-button" onclick="togglePopup()">X</button>
+            </div>
+                
+            <div id="overlay" class="overlay"></div>
+    </header>
+
+    <div class="container">
+        <h1>Matching Flashcards</h1>
+        <div id="game-container">
+            <div id="questions"></div>
+            <div id="answers"></div>
+        </div>
+        <div id="mistakes">Kesalahan: 0</div>
+        <button id="next-page-button" class="hidden" onclick="goToNextPage()">Yuk Latihan!</button>
+        <div id="celebration" class="hidden">Selamat, Anda berhasil menyelesaikan soal!</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
